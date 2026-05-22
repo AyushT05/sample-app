@@ -26,6 +26,12 @@ pipeline {
             }
         }
 
+        stage('Docker Login') {
+            steps {
+                bat 'docker login -u ayusht05 -p dckr_pat_OXAUZu73ROdlnuxrek5p8gT2BTg'
+            }
+        }
+
         stage('Docker Push') {
             steps {
                 bat 'docker push ayusht05/sample-app'
